@@ -109,7 +109,7 @@ const FAQ = () => {
               <span className="text-2xl">
                 <img src={"../.././assets/faqq.webp"} alt="Faq Question" />
               </span>
-              <p className="flex justify-between w-full">
+              <p className="flex justify-between w-full border-b border-gray-200">
                 <h3 className="text-xl font-semibold ">{item.question}</h3>
                 {openIndex === index ? (
                   <ChevronUp className="text-end h-8 w-8 transform transition-transform duration-300" />
@@ -119,9 +119,9 @@ const FAQ = () => {
               </p>
             </button>
             <div
-              className={`overflow-hidden bg-[#425569] py-[0.1rem] px-5 rounded-md mt-2 transition-all ease-in-out duration-300 ${openIndex === index ? "max-h-screen" : "max-h-0"}`}
+              className={`overflow-hidden  py-[0.1rem] px-5 rounded-md mt-2 transition-all ease-in-out duration-300 ${openIndex === index ? "max-h-screen" : "max-h-0"}`}
             >
-              <p className="mt-2 text-[1.3rem] pl-16 text-white">
+              <p className="mt-2 text-[1.3rem] pl-16 text-dark">
                 {item.answer}
               </p>
             </div>
@@ -139,7 +139,7 @@ const FAQ = () => {
               <span className="text-2xl">
                 <img src={"../.././assets/faqq.webp"} alt="Faq Question" />
               </span>
-              <p className="flex justify-between w-full">
+              <p className="flex justify-between w-full border-b border-gray-200 p-2">
                 <h3 className="text-xl font-semibold">{item.question}</h3>
                 {openIndex === index + 5 ? (
                   <ChevronUp className="text-end h-8 w-8 transform transition-transform duration-300" />
@@ -149,9 +149,9 @@ const FAQ = () => {
               </p>
             </button>
             <div
-              className={`overflow-hidden transition-all bg-[#425569] py-[0.1rem] px-5 rounded-md mt-2 ease-in-out duration-300 ${openIndex === index + 5 ? "max-h-screen" : "max-h-0"}`}
+              className={`overflow-hidden transition-all  py-[0.1rem] px-5 rounded-md mt-2 ease-in-out duration-300 ${openIndex === index + 5 ? "max-h-screen" : "max-h-0"}`}
             >
-              <p className="mt-2 text-[1.3rem] pl-16 text-white">
+              <p className="mt-2 text-[1.3rem] pl-16 text-dark">
                 {item.answer}
               </p>
             </div>

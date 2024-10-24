@@ -63,9 +63,8 @@ const Card = ({ item, height, setHeight, clickHeight, index }) => (
   >
     <div
       className={`${
-        height === index ? " overflow-y-scroll" : "overflow-y-hidden"
+        height === index ? " overflow-y-scroll scrollbar-thin" : "overflow-y-hidden"
       }`}
-      style={{ scrollbarWidth: "none" }}
     >
       {/* <div className={`${height === index ? 'h-auto' : 'h-[445px]'} max-[480px]:h-auto`}> */}
       <div>
@@ -75,18 +74,10 @@ const Card = ({ item, height, setHeight, clickHeight, index }) => (
           </h3>
         </a>
         <div
-          className="h-64 p-0 overflow-y-auto mt-3"
-          style={{
-            scrollbarWidth: "none",
-            msOverflowStyle: "none",
-          }}
+          className="h-64 p-0 overflow-y-auto mt-3 scrollbar-thin"
         >
           <p
             className="text-[1.2rem]"
-            style={{
-              WebkitOverflowScrolling: "touch",
-              "::-webkit-scrollbar": { display: "none" },
-            }}
             dangerouslySetInnerHTML={{ __html: item.para }}
           />
         </div>

@@ -26,7 +26,7 @@ const Hero = () => {
             transition={{ duration: 0.5 }}
           >
             <h1 className="text-4xl font-extrabold tracking-tight text-gray-900 sm:text-5xl md:text-6xl">
-              <span className="block text-[#475569] xl:inline">Best Engineering</span>{' '}
+              <span className="block  xl:inline">Best Engineering</span>{' '}
               <span className="block xl:inline">Assignment Help in Australia for Students</span>
             </h1>
             <p className="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
@@ -40,17 +40,15 @@ const Hero = () => {
                   Create an Order
                 </a>
               </div>
-            <div className='  max-[1024px]:block'>
-                            <Form />
-                        </div>
+           
             <div className="mt-8 sm:flex sm:justify-center lg:justify-start">
-              
-              
+           
             </div>
+           
           </motion.div>
 
           <motion.div
-            className="relative  flex items-center justify-center"
+            className="relative  "
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5, delay: 0.2 }}
@@ -69,6 +67,10 @@ const Hero = () => {
           </motion.div>
         </div>
 
+
+        <div className='  max-[1024px]:block'>
+                            <Form />
+                        </div>
 
         <div className="mt-12 grid gap-8 lg:grid-cols-3">
       {[

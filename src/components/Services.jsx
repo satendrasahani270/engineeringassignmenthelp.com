@@ -47,45 +47,27 @@ const items = [
 const Card = ({ item, height, setHeight, clickHeight, index }) => (
   <div
     key={index}
-    className="p-6 h-[403px] overflow-hidden text-center border  rounded-3xl shadow bg-gray-200 hover:bg-gray-600 hover:rounded-2xl min-[1024px]:hover:animate-pulse hover:text-white"
+    className="p-6 h-[403px] overflow-hidden text-center border rounded-3xl shadow bg-gray-200 hover:bg-gray-600 hover:rounded-2xl min-[1024px]:hover:animate-pulse hover:text-white"
   >
     <div
       className={`${
-        height === index ? " overflow-y-scroll" : "overflow-y-hidden"
+        height === index ? "overflow-y-scroll scrollbar-thin" : "overflow-y-hidden"
       }`}
-      style={{ scrollbarWidth: "none" }}
     >
-      {/* <div className={`${height === index ? 'h-auto' : 'h-[445px]'} max-[480px]:h-auto`}> */}
       <div>
         <a href="#">
           <h3 className="mb-2 text-[30px] text-center font-bold tracking-tight hover:text-white">
             {item.head}
           </h3>
         </a>
-        <div
-          className="h-64 p-0 overflow-y-auto mt-3"
-          style={{
-            scrollbarWidth: "none",
-            msOverflowStyle: "none",
-          }}
-        >
+        <div className="h-64 p-0 overflow-y-auto mt-3 scrollbar-thin">
           <p
             className="text-[1.2rem]"
-            style={{
-              WebkitOverflowScrolling: "touch",
-              "::-webkit-scrollbar": { display: "none" },
-            }}
             dangerouslySetInnerHTML={{ __html: item.para }}
           />
         </div>
       </div>
     </div>
-    {/* <button
-            onClick={() => clickHeight(index)}
-            className="inline-flex max-[480px]:hidden  px-4 py-2 mt-2  font-medium text-black bg-yellow-400 rounded-lg hover:bg-yellow-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-        >
-            {`${height === index ? 'Read Less' : "Read more"}`}
-        </button> */}
   </div>
 );
 

@@ -37,15 +37,11 @@ const Captcha = ({ clearRef, isValid, setIsValid }) => {
 
   return (
     <>
-      <div className='text-black flex justify-between'>
-        <div className=' flex gap-2'>
-          <input type='hidden' ref={clearRef} onClick={() => setUserInput("")} />
-          <p className='text-[1.3rem]'>{captcha}</p>
-          <button id='generateButton' onClick={generateCaptcha}><img  width={20} height={20} src={"/assets/rotate-reverse.webp"} alt="regenerateCaptcha" /></button>
-        </div>
-        <div className='flex gap-2'>
+      <div className='text-black flex justify-between flex-wrap gap-5'>
+
+        <div className='flex gap-2 m-t-12'>
           <input
-            className='rounded-md focus:outline-none md:w-[10rem] w-[7rem] border-0 py-1.5 md:pl-7 pl-2 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400  sm:text-sm sm:leading-6'
+            className='rounded-md py-3 px-3 focus:outline-none md:w-[100%] w-[100%] border-0 py-1.5 md:pl-7 pl-2 text-gray-900 ring-1 focus:ring-2 focus:ring-yellow-500 ring-inset ring-gray-300 placeholder:text-gray-400  sm:text-sm sm:leading-6'
             type="text"
             name='capchafield'
             placeholder="Enter Captcha"
@@ -54,6 +50,11 @@ const Captcha = ({ clearRef, isValid, setIsValid }) => {
             required
           />
           <button className='text-[1.3rem]' type='button' onClick={validateCaptcha}>Validate</button>
+        </div>
+        <div className=' flex gap-2 m-t-12 items-center ml-5'>
+          <input type='hidden' ref={clearRef} onClick={() => setUserInput("")} />
+          <p className='text-[1.3rem]'>{captcha}</p>
+          <button id='generateButton' onClick={generateCaptcha}><img  width={20} height={20} src={"/assets/rotate-reverse.webp"} alt="regenerateCaptcha" /></button>
         </div>
       </div>
       <div className='text-center text-black'>

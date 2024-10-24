@@ -1,0 +1,271 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+P,
+td {
+    font-size: normal !important;
+}
+html {
+    scroll-behavior: smooth;
+  }
+
+header ul>li:hover {
+    opacity: 0.7;
+    background: #4ec44e;
+    padding-top: 6px;
+    transition: opacity 0.8s ease-in-out;
+}
+
+form button#generateButton {
+    position: relative;
+}
+
+form button#generateButton:hover::before {
+    content: 'Click on regenerate Captcha';
+    position: absolute;
+    text-decoration: currentColor;
+    bottom: -11px;
+    width: max-content;
+    transition: 0.5s ease-in-out;
+    left: -3rem;
+}
+
+@media (width>1024px) {
+    #left-arrow {
+        margin-left: -4rem;
+    }
+
+    #right-arrow {
+        margin-right: -4rem;
+    }
+}
+
+@media (width>768px) {
+    #left-arrow {
+        margin-left: -3rem;
+    }
+
+    #right-arrow {
+        margin-right: -3rem;
+    }
+}
+
+@media (width<=768px) {
+    form {
+        margin-left: 2rem !important;
+        margin-right: 2rem !important;
+    }
+
+    nav ul {
+        padding-top: 1rem;
+    }
+
+    nav ul>li {
+        width: 80%;
+        margin: 0 auto 1rem auto;
+    }
+
+    #content-grid-container {
+        margin: 0 1rem;
+    }
+
+    #subject {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    #carousel-card-container {
+        width: 89%;
+    }
+}
+
+
+@media (width<=480px) {
+    header>nav>div>img {
+        width: 150px !important;
+    }
+
+    #subject {
+        padding-right: 1rem;
+    }
+
+    #carousel-card-container {
+        width: 80%;
+    }
+
+    #services-hr {
+        width: 180px;
+    }
+}
+
+.react-international-phone-input-container .react-international-phone-input {
+    width: 100%;
+}
+
+.react-international-phone-input-container .react-international-phone-country-selector-button {
+    padding-left: 0.75rem;
+}
+
+.our-services {
+    span {
+        font-size: 1.3rem;
+        font-weight: 500;
+    }
+}
+
+#left-arrow:hover,
+#right-arrow:hover {
+    background: #1f2937 !important;
+    color: #fff;
+}
+
+.styles-module_whatsappButton__tVits {
+    bottom: 1rem !important;
+}
+
+.hero {
+    background-image: url(".././assets/engineering.webp");
+    background-blend-mode: exclusion;
+    background-position-y: center;
+}
+
+h4 {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+#content-grid-container {
+
+    h4,
+    h3 {
+        font-size: 1.3rem !important;
+        padding-left: 5rem;
+        padding-right: 5rem;
+    }
+
+    tr>th>h3 {
+        font-size: 25px !important;
+        padding: 4px;
+    }
+
+    @media (max-width: 480px) {
+
+        td,
+        h4,
+        h3 {
+            padding-left: 1rem !important;
+            padding-right: 1rem !important;
+            font-size: 1rem !important;
+        }
+
+        h2 {
+            font-size: 1.5rem !important;
+            line-height: 1.5rem !important;
+        }
+    }
+
+    @media (max-width: 768px) {
+        h2 {
+            padding: 0 !important;
+        }
+
+        td,
+        h4,
+        h3 {
+            padding-left: 1rem;
+            padding-right: 1rem;
+            line-height: normal;
+        }
+    }
+
+    h2 {
+        font-size: 1.875rem;
+        line-height: 2.25rem;
+        font-family: ui-serif, Georgia, Cambria, 'Times New Roman', Times, serif;
+        text-align: center;
+        font-weight: 600;
+        padding: 0.8rem;
+    }
+
+    h4,
+    h3 {
+        margin-top: 10px;
+    }
+}
+
+#about .slick-initialized .slick-slide {
+    display: grid;
+    row-gap: 2rem;
+}
+
+@media (max-width: 480px) {
+    .hero {
+        background-position-y: 6rem;
+        background-position-x: center;
+    }
+
+    .slick-slider .slick-track {
+        gap: 0;
+    }
+
+    #about .slick-initialized .slick-slide {
+        row-gap: 1rem;
+    }
+
+    #about .slick-slider .slick-list {
+        padding: 0;
+        height: 851px;
+    }
+
+    .slider-container .slick-slider .slick-list {
+        height: 555px;
+    }
+
+    h4 {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+        font-size: 1rem !important;
+    }
+
+    h2 {
+        font-size: 1.5rem !important;
+        line-height: 1.5rem !important;
+    }
+}
+
+form .react-tel-input .flag {
+    background-image: url('../assets/flag-img.webp') !important;
+}
+
+form .react-tel-input .form-control {
+    width: 100% !important;
+}
+
+.slick-slider .slick-list {
+    padding: 1rem 0;
+}
+
+.dots{
+    position: relative;
+}
+.dots::before{
+    content: "";
+    height: 15px;
+    position: absolute;
+    width: 15px;
+    background-color: #3F51B5;
+    border-radius: 50%;
+    margin: 9px -23px;
+}
+.image-bg{
+    background-image: url("../public/assets/faq.webp");
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 20;
+}

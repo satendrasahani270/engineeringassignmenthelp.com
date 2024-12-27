@@ -85,6 +85,7 @@ export default function Form() {
       return false
     }
     
+    
     try {
       setIsLoading(true)
       const response = await axios.post('https://portal.be.clickinpedia.io/send-lead', {

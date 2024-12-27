@@ -149,7 +149,7 @@ const Subject = () => {
       <div id="subject" className=" slider-container w-full relative">
         <h2 className="text-center text-5xl font-semibold mb-2 text-black">
           Let the Engineering Assignment Writers Help You Excel in All{" "}
-          <br className=" max-md:hidden" /> Areas of Engineering
+          Areas of Engineering
         </h2>
         <p className="max-[480px]:px-2 text-center max-w-screen-2xl mx-auto text-[1.3rem]">
           Engineering is a vast and complex field, encompassing a wide range of

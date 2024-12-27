@@ -26,7 +26,7 @@ form button#generateButton {
     position: relative;
 }
 
-form button#generateButton:hover::before {
+/* form button#generateButton:hover::before {
     content: 'Click on regenerate Captcha';
     position: absolute;
     text-decoration: currentColor;
@@ -34,7 +34,7 @@ form button#generateButton:hover::before {
     width: max-content;
     transition: 0.5s ease-in-out;
     left: -3rem;
-}
+} */
 
 @media (width>1024px) {
     #left-arrow {
@@ -196,7 +196,7 @@ h4 {
     }
 }
 
-#about .slick-initialized .slick-slide {
+#testimonials .slick-initialized .slick-slide {
     display: grid;
     row-gap: 2rem;
 }
@@ -211,11 +211,11 @@ h4 {
         gap: 0;
     }
 
-    #about .slick-initialized .slick-slide {
+    #testimonials .slick-initialized .slick-slide {
         row-gap: 1rem;
     }
 
-    #about .slick-slider .slick-list {
+    #testimonials .slick-slider .slick-list {
         padding: 0;
         height: 851px;
     }

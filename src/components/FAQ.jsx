@@ -71,7 +71,7 @@ const FAQ = () => {
   return (
     <section className="bg-gray-100 py-16 relative">
    
-    <div className="max-[768px]:w-full pl-10 pr-8">
+    <div className="max-[768px]:w-full pl-10 pr-8" id="faq">
       <h2 className="text-3xl text-blue-700 font-bold mb-4">FAQ</h2>
       <hr className="w-12 border-b-4 border-red-500 mb-4" />
       <div className="font-bold -tracking-tighter text-2xl pb-4">

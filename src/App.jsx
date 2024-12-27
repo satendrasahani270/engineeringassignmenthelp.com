@@ -8,22 +8,15 @@ import OurServices from "./OurServices";
 import WhatsApp from "./components/WhatsApp";
 import SerSub from "./components/SerSub";
 import { useState } from "react";
-import { X } from "lucide-react";
-
+import ChristmasModal from "./components/ChrsitmasBanner";
 function App() {
   const [activeComponent, setActiveComponent] = useState("subject");
-
-  const [isOpen, setIsOpen] = useState(true);
-
-  const handleClose = () => {
-    setIsOpen(false);
-  };
-
   return (
     <>
+    <ChristmasModal/>
       <Header
-        activeComponent={activeComponent}
-        setActiveComponent={setActiveComponent}
+        // activeComponent={activeComponent}
+        // setActiveComponent={setActiveComponent}
       />
       <Hero />
       <SerSub
@@ -37,18 +30,6 @@ function App() {
       <Footer />
       <WhatsApp />
 
-   {isOpen &&(   <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-        <button className="absolute top-3 right-3 text-gray-600 hover:text-gray-800"
-        onClick={handleClose}
-        >
-          <X size={30} className="text-white" />
-        </button>
-        <img
-          src="/assets/offer.png"
-          alt="Modal Content"
-          className="rounded-lg w-[37rem] h-auto "
-        />
-      </div>)}
     </>
   );
 }

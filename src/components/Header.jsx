@@ -1,14 +1,12 @@
 import React, { useState } from "react";
 import logo from "/assets/engineering_logo.webp";
-import { Link } from "react-scroll";
-const Header = ({ activeComponent, setActiveComponent }) => {
+import { Link } from "react-router-dom";
+const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
-  const displayTab = () => {
-    setIsOpen(false);
-  };
+
   return (
     <header className="px-10 lg:px-0 bg-slate-600 w-full sticky top-0 z-50">
       <nav className="flex justify-between items-center py-3 lg:max-w-[85%] mx-auto">
@@ -41,45 +39,27 @@ const Header = ({ activeComponent, setActiveComponent }) => {
           </button>
         </div>
         <ul
-          onClick={displayTab}
           className={`lg:flex gap-1 ${
             isOpen ? "block" : "hidden"
           } absolute lg:relative lg:flex-row flex-col text-white w-full lg:w-auto sm:top-[3.2rem] top-[2.8rem] left-0 lg:top-0 lg:left-0 rounded-b-[2rem] max-[768px]:shadow-2xl max-[768px]:bg-slate-700`}
         >
           <li className="h-10 px-6 font-semibold rounded-md   pt-1 cursor-pointer">
-            <a href="/" smooth={true} duration={300}>
-              Home
-            </a>
+            <Link to="/">Home</Link>
           </li>
           <li className="h-10 px-6 font-semibold rounded-md   pt-1 cursor-pointer">
-            <Link
-              to="subject"
-              smooth={true}
-              duration={300}
-              onClick={() => setActiveComponent("subject")}
-            >
-              Subject
-            </Link>
+            <a href="/#subject">Subject</a>
+          </li>
+          {/* <li className="h-10 px-6 font-semibold rounded-md   pt-1 cursor-pointer">
+          <a href="/#service">Service</a>
+          </li> */}
+          <li className="h-10 px-6 font-semibold rounded-md   pt-1 cursor-pointer">
+            <a href="/#testimonials">Testimonials</a>
           </li>
           <li className="h-10 px-6 font-semibold rounded-md   pt-1 cursor-pointer">
-            <Link
-              to="service"
-              smooth={true}
-              duration={300}
-              onClick={() => setActiveComponent("service")}
-            >
-              Service
-            </Link>
+            <Link to="/contact">Contact-us</Link>
           </li>
           <li className="h-10 px-6 font-semibold rounded-md   pt-1 cursor-pointer">
-            <Link to="about" smooth={true} duration={300}>
-              About
-            </Link>
-          </li>
-          <li className="h-10 px-6 font-semibold rounded-md   pt-1 cursor-pointer">
-            <Link to="contact" smooth={true} duration={300}>
-              Contact-us
-            </Link>
+            <a href="/#faq">FAQ</a>
           </li>
         </ul>
       </nav>

@@ -114,7 +114,7 @@ const Footer = () => {
             <a
               className="bg-slate-900 text-yellow-400 pb-2 pt-1 hover:px-6 hover:rounded-full transition delay-1000 ease-linear rounded-lg px-4"
               target="_blank"
-              href="https://www.assignmentwriter.io/"
+              href="https://www.assignmentwriter.au/"
             >
               Assignment Writer
             </a>

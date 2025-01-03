@@ -8,12 +8,12 @@ import OurServices from "./OurServices";
 import WhatsApp from "./components/WhatsApp";
 import SerSub from "./components/SerSub";
 import { useState } from "react";
-import ChristmasModal from "./components/ChrsitmasBanner";
+// import ChristmasModal from "./components/ChrsitmasBanner";
 function App() {
   const [activeComponent, setActiveComponent] = useState("subject");
   return (
     <>
-    <ChristmasModal/>
+    {/* <ChristmasModal/> */}
       <Header
         // activeComponent={activeComponent}
         // setActiveComponent={setActiveComponent}

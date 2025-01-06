@@ -8,11 +8,22 @@ import OurServices from "./OurServices";
 import WhatsApp from "./components/WhatsApp";
 import SerSub from "./components/SerSub";
 import { useState } from "react";
+import { Helmet } from "react-helmet";
 // import ChristmasModal from "./components/ChrsitmasBanner";
 function App() {
   const [activeComponent, setActiveComponent] = useState("subject");
   return (
-    <>
+  
+   
+    <> 
+    <Helmet>
+
+
+    <link 
+          rel="canonical" 
+          href="https://www.engineeringassignmenthelp.com/" 
+        />
+    </Helmet>
     {/* <ChristmasModal/> */}
       <Header
         // activeComponent={activeComponent}
@@ -30,7 +41,9 @@ function App() {
       <Footer />
       <WhatsApp />
 
-    </>
+      </>
+
+    
   );
 }
 

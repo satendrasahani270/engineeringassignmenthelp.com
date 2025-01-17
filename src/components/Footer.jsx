@@ -1,5 +1,5 @@
 import React from "react";
-import { MapPin } from "lucide-react";
+import { MapPin, Instagram, Linkedin, Facebook, Youtube } from "lucide-react";
 import { Link } from "react-scroll";
 
 const Footer = () => {
@@ -32,27 +32,31 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                to="service"
-                smooth={true}
-                duration={300} className="hover:text-yellow-500 cursor-pointer">
+                  to="service"
+                  smooth={true}
+                  duration={300}
+                  className="hover:text-yellow-500 cursor-pointer"
+                >
                   Service
                 </Link>
               </li>
               <li>
                 <Link
-                 to="about"
-                 smooth={true}
-                 duration={300}
-                className="hover:text-yellow-500 cursor-pointer">
+                  to="about"
+                  smooth={true}
+                  duration={300}
+                  className="hover:text-yellow-500 cursor-pointer"
+                >
                   About
                 </Link>
               </li>
               <li>
                 <Link
-                 to="contact"
-                 smooth={true}
-                 duration={300} className="hover:text-yellow-500 cursor-pointer">
-
+                  to="contact"
+                  smooth={true}
+                  duration={300}
+                  className="hover:text-yellow-500 cursor-pointer"
+                >
                   Contact-Us
                 </Link>
               </li>
@@ -105,6 +109,58 @@ const Footer = () => {
               </button>
             </div>
           </div>
+        </div>
+
+        {/* Social Media Icons */}
+        <div className="flex justify-center items-center gap-6 py-6 border-t border-gray-500 mt-8">
+          <a
+            href="https://www.instagram.com/clickinpedia.io"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-yellow-500 transition-colors duration-300"
+          >
+            <Instagram
+              size={28}
+              className="hover:scale-110 transition-transform duration-300"
+            />
+            <span className="sr-only">Instagram</span>
+          </a>
+          <a
+            href="https://www.linkedin.com/company/clickinpediaio"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-yellow-500 transition-colors duration-300"
+          >
+            <Linkedin
+              size={28}
+              className="hover:scale-110 transition-transform duration-300"
+            />
+            <span className="sr-only">LinkedIn</span>
+          </a>
+          <a
+            href="https://www.facebook.com/247Asignmenthelp"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-yellow-500 transition-colors duration-300"
+          >
+            <Facebook
+              size={28}
+              className="hover:scale-110 transition-transform duration-300"
+            />
+            <span className="sr-only">Facebook</span>
+          </a>
+          <a
+            href="https://www.youtube.com/@Clickinpedia._io"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-yellow-500 transition-colors duration-300"
+          >
+            <Youtube
+              size={28}
+              className="hover:scale-110 transition-transform duration-300"
+            />
+            <span className="sr-only">YouTube</span>
+          </a>
         </div>
 
         <div className="mt-5 pt-2 text-center">

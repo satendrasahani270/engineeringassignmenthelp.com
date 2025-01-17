@@ -9,25 +9,19 @@ import WhatsApp from "./components/WhatsApp";
 import SerSub from "./components/SerSub";
 import { useState } from "react";
 import { Helmet } from "react-helmet";
-// import ChristmasModal from "./components/ChrsitmasBanner";
 function App() {
   const [activeComponent, setActiveComponent] = useState("subject");
   return (
-  
-   
-    <> 
-    <Helmet>
-
-
-    <link 
-          rel="canonical" 
-          href="https://www.engineeringassignmenthelp.com/" 
+    <>
+      <Helmet>
+        <link
+          rel="canonical"
+          href="https://www.engineeringassignmenthelp.com/"
         />
-    </Helmet>
-    {/* <ChristmasModal/> */}
+      </Helmet>
       <Header
-        // activeComponent={activeComponent}
-        // setActiveComponent={setActiveComponent}
+      // activeComponent={activeComponent}
+      // setActiveComponent={setActiveComponent}
       />
       <Hero />
       <SerSub
@@ -39,11 +33,8 @@ function App() {
       <OurServices />
       <FAQ />
       <Footer />
-      <WhatsApp />
-
-      </>
-
-    
+      {/* <WhatsApp /> */}
+    </>
   );
 }
 

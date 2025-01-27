@@ -97,7 +97,7 @@ const Footer = () => {
                   <MapPin size={25} />
                 </span>
                 <a className="text-lg max-[320px]:text-[1rem]">
-                  6 Miami Dr,Point Cook VIC 3030 Australia
+                  16 Miami Dr,Point Cook VIC 3030 Australia
                 </a>
               </div>
               <button className="mt-4 bg-yellow-500 hover:bg-yellow-600 w-full text-black hover:text-white font-bold py-2 px-4 rounded">

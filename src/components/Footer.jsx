@@ -134,24 +134,9 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link
-                  to="about"
-                  smooth={true}
-                  duration={300}
-                  className="hover:text-yellow-500 cursor-pointer"
-                >
-                  About
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="contact"
-                  smooth={true}
-                  duration={300}
-                  className="hover:text-yellow-500 cursor-pointer"
-                >
-                  Contact-Us
-                </Link>
+                <a className="hover:text-yellow-500 cursor-pointer" href="/contact">
+                  Contact Us
+                </a>
               </li>
             </ul>
           </div>

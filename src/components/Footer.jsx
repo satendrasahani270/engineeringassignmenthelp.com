@@ -56,8 +56,23 @@ const InstagramIcon = () => (
         <stop offset="90%" stopColor="#285AEB" />
       </radialGradient>
     </defs>
-    <rect x="2" y="2" width="20" height="20" rx="5" fill="url(#instagram-gradient)" />
-    <rect x="6" y="6" width="12" height="12" rx="3" fill="none" stroke="white" />
+    <rect
+      x="2"
+      y="2"
+      width="20"
+      height="20"
+      rx="5"
+      fill="url(#instagram-gradient)"
+    />
+    <rect
+      x="6"
+      y="6"
+      width="12"
+      height="12"
+      rx="3"
+      fill="none"
+      stroke="white"
+    />
     <circle cx="12" cy="12" r="3" fill="none" stroke="white" />
     <circle cx="16.5" cy="7.5" r="1.5" fill="white" />
   </svg>
@@ -191,7 +206,7 @@ const Footer = () => {
                 </span>
               </div>
               <button className="mt-4 bg-yellow-500 hover:bg-yellow-600 w-full text-black hover:text-white font-bold py-2 px-4 rounded">
-                <a href="/">Any Query</a>
+                <a href="https://wa.me/61489921023">Any Query</a>
               </button>
             </div>
           </div>
@@ -240,8 +255,7 @@ const Footer = () => {
         <div className="mt-5 pt-2 text-center">
           <p className="m-0 p-3 text-[1.3rem]">
             CopyRight &copy; 2024 Engineering Assignment Help. All rights
-            reserved || <br className="hidden max-[480px]:block" />
-            A Brand of{" "}
+            reserved || <br className="hidden max-[480px]:block" />A Brand of{" "}
             <a
               className="bg-slate-900 text-yellow-400 pb-2 pt-1 hover:px-6 hover:rounded-full transition delay-1000 ease-linear rounded-lg px-4"
               target="_blank"

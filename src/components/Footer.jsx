@@ -206,7 +206,7 @@ const Footer = () => {
                 </span>
               </div>
               <button className="mt-4 bg-yellow-500 hover:bg-yellow-600 w-full text-black hover:text-white font-bold py-2 px-4 rounded">
-                <a href="https://wa.me/61489921023">Any Query</a>
+                <a href="tel:61489921023">Any Query</a>
               </button>
             </div>
           </div>

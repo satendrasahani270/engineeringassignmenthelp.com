@@ -5,7 +5,7 @@ import Review from "./components/Review";
 import FAQ from "./components/FAQ";
 import Footer from "./components/Footer";
 import OurServices from "./OurServices";
-// import WhatsApp from "./components/WhatsApp";
+import WhatsApp from "./components/WhatsApp";
 import SerSub from "./components/SerSub";
 import { useState } from "react";
 import { Helmet } from "react-helmet";
@@ -33,7 +33,7 @@ function App() {
       <OurServices />
       <FAQ />
       <Footer />
-      {/* <WhatsApp /> */}
+      <WhatsApp />
     </>
   );
 }

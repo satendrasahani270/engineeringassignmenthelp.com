@@ -10,7 +10,7 @@ const Contact = () => {
     name: "",
     email: "",
     phone: "",
-    message: ""
+    message: "",
   });
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -28,9 +28,9 @@ const Contact = () => {
 
   const handleInputChange = (e) => {
     const { id, value } = e.target;
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
-      [id]: value
+      [id]: value,
     }));
     setError(null);
   };
@@ -60,7 +60,7 @@ const Contact = () => {
       name: "",
       email: "",
       phone: "",
-      message: ""
+      message: "",
     });
     setSubmitted(false);
     setError(null);
@@ -68,7 +68,7 @@ const Contact = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
+
     if (!validateForm()) {
       return;
     }
@@ -77,32 +77,39 @@ const Contact = () => {
     setError(null);
 
     try {
-      await axios.post('https://portal.be.clickinpedia.io/send-lead', {
-        name: formData.name,
-        email: formData.email,
-        phone: formData.phone,
-        msg: formData.message,
-        "website": "www.engineeringassignmenthelp.com",
-        "mailaccesstokken": "nahev^q7e51584Q##@&85g"
-      }, {
-        headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json'
+      await axios.post(
+        "https://portal.be.clickinpedia.io/send-lead",
+        {
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          msg: formData.message,
+          website: "www.engineeringassignmenthelp.com",
+          mailaccesstokken: "nahev^q7e51584Q##@&85g",
+        },
+        {
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
         }
-      });
-      
+      );
+
       setSubmitted(true);
       formRef.current.reset();
     } catch (error) {
       if (error.response) {
-        setError(error.response.data.message || 'Failed to send message. Please try again.');
-        console.error('Server Error:', error.response.data);
+        setError(
+          error.response.data.message ||
+            "Failed to send message. Please try again."
+        );
+        console.error("Server Error:", error.response.data);
       } else if (error.request) {
-        setError('Network error. Please check your connection and try again.');
-        console.error('Network Error:', error.request);
+        setError("Network error. Please check your connection and try again.");
+        console.error("Network Error:", error.request);
       } else {
-        setError('Failed to send message. Please try again later.');
-        console.error('Error:', error.message);
+        setError("Failed to send message. Please try again later.");
+        console.error("Error:", error.message);
       }
     } finally {
       setLoading(false);
@@ -113,10 +120,13 @@ const Contact = () => {
     <>
       <Helmet>
         <title>Contact Us - Engineering Assignment Help</title>
-        <meta name="description" content="Get in touch with our engineering assignment experts. We're here to help you with your engineering homework and projects." />
-        <link 
-          rel="canonical" 
-          href="https://www.engineeringassignmenthelp.com/contact" 
+        <meta
+          name="description"
+          content="Get in touch with our engineering assignment experts. We're here to help you with your engineering homework and projects."
+        />
+        <link
+          rel="canonical"
+          href="https://www.engineeringassignmenthelp.com/contact"
         />
       </Helmet>
       <div className="flex flex-col min-h-screen">
@@ -141,7 +151,8 @@ const Contact = () => {
                     Thank You!
                   </h2>
                   <p className="text-gray-600 mb-6">
-                    Your message has been successfully sent. We'll get back to you soon!
+                    Your message has been successfully sent. We'll get back to
+                    you soon!
                   </p>
                   <button
                     onClick={resetForm}
@@ -161,7 +172,10 @@ const Contact = () => {
 
                   <div className="space-y-6">
                     <div>
-                      <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
+                      <label
+                        htmlFor="name"
+                        className="block text-sm font-medium text-gray-700 mb-1"
+                      >
                         Name
                       </label>
                       <input
@@ -176,7 +190,10 @@ const Contact = () => {
                     </div>
 
                     <div>
-                      <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
+                      <label
+                        htmlFor="email"
+                        className="block text-sm font-medium text-gray-700 mb-1"
+                      >
                         Email
                       </label>
                       <input
@@ -191,7 +208,10 @@ const Contact = () => {
                     </div>
 
                     <div>
-                      <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">
+                      <label
+                        htmlFor="phone"
+                        className="block text-sm font-medium text-gray-700 mb-1"
+                      >
                         Phone Number
                       </label>
                       <input
@@ -206,7 +226,10 @@ const Contact = () => {
                     </div>
 
                     <div>
-                      <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
+                      <label
+                        htmlFor="message"
+                        className="block text-sm font-medium text-gray-700 mb-1"
+                      >
                         Message
                       </label>
                       <textarea
@@ -224,9 +247,10 @@ const Contact = () => {
                       type="submit"
                       disabled={loading}
                       className={`w-full py-3 px-6 rounded-md text-white font-medium transition duration-200
-                        ${loading 
-                          ? 'bg-gray-400 cursor-not-allowed' 
-                          : 'bg-[#eab308] hover:bg-yellow-600 active:transform active:scale-[0.98]'
+                        ${
+                          loading
+                            ? "bg-gray-400 cursor-not-allowed"
+                            : "bg-[#eab308] hover:bg-yellow-600 active:transform active:scale-[0.98]"
                         }
                         focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-500`}
                     >
@@ -236,7 +260,7 @@ const Contact = () => {
                           Sending...
                         </span>
                       ) : (
-                        'Send Message'
+                        "Send Message"
                       )}
                     </button>
                   </div>

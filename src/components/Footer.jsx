@@ -1,4 +1,3 @@
-import React from "react";
 import { MapPin } from "lucide-react";
 import { Link as ScrollLink } from "react-scroll";
 import { Link as RouterLink, useLocation } from "react-router-dom";
@@ -130,7 +129,7 @@ const Footer = () => {
   return (
     <footer className="bg-slate-600 text-gray-300 pt-4 pb-2" id="contact">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 mt-5 p-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mt-5 p-4">
           <div className="lg:mb-0">
             <div className="flex items-center">
               <img
@@ -160,6 +159,78 @@ const Footer = () => {
                   className="hover:text-yellow-500 cursor-pointer"
                 >
                   Contact Us
+                </RouterLink>
+              </li>
+            </ul>
+          </div>
+
+          <div className="contactInfo">
+            <h3 className="text-xl font-bold mb-4 text-white">
+              Assignment Help
+            </h3>
+            <ul className="ml-2 text-xl">
+              <li>
+                <RouterLink
+                  to="/"
+                  className="hover:text-yellow-500 cursor-pointer"
+                >
+                  Assignment help
+                </RouterLink>
+              </li>
+              <li>
+                <RouterLink
+                  to="/"
+                  className="hover:text-yellow-500 cursor-pointer"
+                >
+                  Accounting assignment help
+                </RouterLink>
+              </li>
+              <li>
+                <RouterLink
+                  to="/"
+                  className="hover:text-yellow-500 cursor-pointer"
+                >
+                  Management assignment help
+                </RouterLink>
+              </li>
+              <li>
+                <RouterLink
+                  to="/"
+                  className="hover:text-yellow-500 cursor-pointer"
+                >
+                  Nursing assignment help
+                </RouterLink>
+              </li>
+              <li>
+                <RouterLink
+                  to="/"
+                  className="hover:text-yellow-500 cursor-pointer"
+                >
+                  Programming assignment help
+                </RouterLink>
+              </li>
+              <li>
+                <RouterLink
+                  to="/"
+                  className="hover:text-yellow-500 cursor-pointer"
+                >
+                  Marketing assignment help
+                </RouterLink>
+              </li>
+              <li>
+                <RouterLink
+                  to="/"
+                  className="hover:text-yellow-500 cursor-pointer"
+                >
+                  Law assignment help
+                </RouterLink>
+              </li>
+              <li>
+                <RouterLink
+                  to="/"
+                  className="hover:text-yellow-500 cursor-pointer"
+                >
+                  Engineering assignment help
                 </RouterLink>
               </li>
             </ul>

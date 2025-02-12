@@ -171,7 +171,7 @@ const Footer = () => {
             <ul className="ml-2 text-xl">
               <li>
                 <RouterLink
-                  to="/"
+                  to="https://www.assignmentwriter.au/assessment-help"
                   className="hover:text-yellow-500 cursor-pointer"
                 >
                   Assignment help
@@ -179,7 +179,7 @@ const Footer = () => {
               </li>
               <li>
                 <RouterLink
-                  to="/"
+                  to="https://www.assignmentwriter.au/accounting-assignment-help"
                   className="hover:text-yellow-500 cursor-pointer"
                 >
                   Accounting assignment help
@@ -187,7 +187,7 @@ const Footer = () => {
               </li>
               <li>
                 <RouterLink
-                  to="/"
+                  to="https://www.assignmentwriter.au/management-assignment-help"
                   className="hover:text-yellow-500 cursor-pointer"
                 >
                   Management assignment help
@@ -195,7 +195,7 @@ const Footer = () => {
               </li>
               <li>
                 <RouterLink
-                  to="/"
+                  to="https://www.assignmentwriter.au/nursing-assignment-help"
                   className="hover:text-yellow-500 cursor-pointer"
                 >
                   Nursing assignment help
@@ -203,7 +203,7 @@ const Footer = () => {
               </li>
               <li>
                 <RouterLink
-                  to="/"
+                  to="https://www.assignmentwriter.au/computer-science-assignment-help"
                   className="hover:text-yellow-500 cursor-pointer"
                 >
                   Programming assignment help
@@ -211,7 +211,7 @@ const Footer = () => {
               </li>
               <li>
                 <RouterLink
-                  to="/"
+                  to="https://www.assignmentwriter.au/marketing-assignment-help"
                   className="hover:text-yellow-500 cursor-pointer"
                 >
                   Marketing assignment help
@@ -219,7 +219,7 @@ const Footer = () => {
               </li>
               <li>
                 <RouterLink
-                  to="/"
+                  to="https://www.assignmentwriter.au/law-assignment-help"
                   className="hover:text-yellow-500 cursor-pointer"
                 >
                   Law assignment help
@@ -227,7 +227,7 @@ const Footer = () => {
               </li>
               <li>
                 <RouterLink
-                  to="/"
+                  to="https://www.assignmentwriter.au/engineering-assignment-help"
                   className="hover:text-yellow-500 cursor-pointer"
                 >
                   Engineering assignment help

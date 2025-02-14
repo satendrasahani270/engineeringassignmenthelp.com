@@ -1,148 +1,138 @@
-import { MapPin } from "lucide-react";
+import { MapPin, Phone, Mail } from "lucide-react";
 import { Link as ScrollLink } from "react-scroll";
 import { Link as RouterLink, useLocation } from "react-router-dom";
 
-// Custom link that conditionally uses react-scroll if on home page
 const ConditionalScrollLink = ({ to, children, ...props }) => {
   const location = useLocation();
-  // If already on the home page, use react-scroll for smooth scrolling
   if (location.pathname === "/") {
     return (
       <ScrollLink
         to={to}
         smooth={true}
         duration={300}
-        className="hover:text-yellow-500 cursor-pointer"
+        className="hover:text-yellow-400 transition-colors duration-300 cursor-pointer"
         {...props}
       >
         {children}
       </ScrollLink>
     );
-  } else {
-    // Otherwise, navigate to the home page with the hash.
-    return (
-      <RouterLink
-        to={`/#${to}`}
-        className="hover:text-yellow-500 cursor-pointer"
-        {...props}
-      >
-        {children}
-      </RouterLink>
-    );
   }
+  return (
+    <RouterLink
+      to={`/#${to}`}
+      className="hover:text-yellow-400 transition-colors duration-300 cursor-pointer"
+      {...props}
+    >
+      {children}
+    </RouterLink>
+  );
 };
 
-// Social media icons
-const InstagramIcon = () => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="28"
-    height="28"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-    className="hover:scale-110 transition-transform duration-300"
+const SocialIcon = ({ href, children }) => (
+  <a
+    href={href}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="bg-slate-700 p-3 rounded-full hover:bg-yellow-500 transition-all duration-300 group"
   >
-    <defs>
-      <radialGradient id="instagram-gradient" cx="30%" cy="107%" r="150%">
-        <stop offset="0%" stopColor="#fdf497" />
-        <stop offset="5%" stopColor="#fdf497" />
-        <stop offset="45%" stopColor="#fd5949" />
-        <stop offset="60%" stopColor="#d6249f" />
-        <stop offset="90%" stopColor="#285AEB" />
-      </radialGradient>
-    </defs>
-    <rect
-      x="2"
-      y="2"
-      width="20"
-      height="20"
-      rx="5"
-      fill="url(#instagram-gradient)"
-    />
-    <rect
-      x="6"
-      y="6"
-      width="12"
-      height="12"
-      rx="3"
-      fill="none"
-      stroke="white"
-    />
-    <circle cx="12" cy="12" r="3" fill="none" stroke="white" />
-    <circle cx="16.5" cy="7.5" r="1.5" fill="white" />
-  </svg>
+    {children}
+  </a>
 );
 
-const LinkedInIcon = () => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="28"
-    height="28"
-    viewBox="0 0 24 24"
-    className="hover:scale-110 transition-transform duration-300"
-  >
-    <rect width="24" height="24" rx="2" fill="#0A66C2" />
-    <path
-      d="M6.5 5.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm-3 15h3v-9h-3v9zm5.5 0h3v-4.5c0-1.5 1-2.5 2.5-2.5s2.5 1 2.5 2.5v4.5h3v-5c0-3-2-4.5-4.5-4.5-1.5 0-2.5.5-3 1.5v-1h-3v9z"
-      fill="white"
-    />
-  </svg>
-);
+const ContactCard = () => (
+  <div className="bg-slate-800 rounded-xl p-6 space-y-6 max-w-md">
+    <h3 className="text-2xl font-bold text-white">Contact Information</h3>
 
-const FacebookIcon = () => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="28"
-    height="28"
-    viewBox="0 0 24 24"
-    className="hover:scale-110 transition-transform duration-300"
-  >
-    <rect width="24" height="24" rx="12" fill="#1877F2" />
-    <path
-      d="M15.12 5.32H17V2.14A26.11 26.11 0 0 0 14.26 2c-2.72 0-4.58 1.66-4.58 4.7v2.62H6.61v3.56h3.07V22h3.68v-9.12h3.06l.46-3.56h-3.52V7.05c0-1.05.28-1.73 1.76-1.73z"
-      fill="white"
-    />
-  </svg>
-);
+    <div className="space-y-5">
+      <a
+        href="tel:+61489921023"
+        className="flex items-center gap-3 text-gray-300 hover:text-yellow-400 transition-colors duration-300 group"
+      >
+        <Phone className="w-6 h-6 text-yellow-400 flex-shrink-0" />
+        <span className="text-lg">+61489921023</span>
+      </a>
 
-const YoutubeIcon = () => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="28"
-    height="28"
-    viewBox="0 0 24 24"
-    className="hover:scale-110 transition-transform duration-300"
-  >
-    <rect width="24" height="24" rx="6" fill="#FF0000" />
-    <path
-      d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"
-      fill="white"
-    />
-  </svg>
+      <a
+        href="mailto:help@engineeringasignhelp.com"
+        className="flex items-center gap-3 text-gray-300 hover:text-yellow-400 transition-colors duration-300 group"
+      >
+        <Mail className="w-6 h-6 text-yellow-400 flex-shrink-0" />
+        <span className="text-lg break-all">help@engineeringasignhelp.com</span>
+      </a>
+
+      <div className="flex items-start gap-3">
+        <MapPin className="w-6 h-6 text-yellow-400 flex-shrink-0 mt-1" />
+        <span className="text-lg text-gray-300">
+          16 Miami Dr, Point Cook
+          <br />
+          VIC 3030 Australia
+        </span>
+      </div>
+    </div>
+
+    <a
+      href="tel:+61489921023"
+      className="block w-full bg-yellow-500 hover:bg-yellow-400 text-slate-900 text-center py-4 rounded-lg font-semibold text-lg transition-colors duration-300"
+    >
+      Any Query
+    </a>
+  </div>
 );
 
 const Footer = () => {
+  const partnerLinks = [
+    { name: "Assignment Expert", url: "https://www.assignmentexpert.io/" },
+    {
+      name: "MYOB Assignment Help",
+      url: "https://www.myobassignmenthelp.com/",
+    },
+    {
+      name: "Xero Assignment Help",
+      url: "https://www.xeroassignmenthelp.com/",
+    },
+    { name: "Online Exam Help", url: "https://www.onlineexamhelp.io/" },
+    {
+      name: "Engineering Assignment Help",
+      url: "https://www.engineeringassignmenthelp.com/",
+    },
+    { name: "Coursework Help", url: "https://www.courseworkhelp.io/" },
+    { name: "Assessment Help UK", url: "https://www.assessmenthelp.uk/" },
+    {
+      name: "Programming Assignment Help UK",
+      url: "https://www.programmingassignmenthelp.uk/",
+    },
+    { name: "Coursework Help UK", url: "https://www.courseworkhelp.uk/" },
+    { name: "Exam Help UK", url: "https://www.examhelp.uk/" },
+    {
+      name: "Online TAFE Assignment Help",
+      url: "https://www.onlinetafeassignmenthelp.com/",
+    },
+    { name: "Case Study Help UK", url: "https://www.casestudyhelp.uk/" },
+    {
+      name: "Marketing Assignment Help UK",
+      url: "https://www.marketingassignmenthelp.uk/",
+    },
+  ];
+
   return (
-    <footer className="bg-slate-600 text-gray-300 pt-4 pb-2" id="contact">
+    <footer className="bg-gradient-to-b from-slate-800 to-slate-900 text-gray-300">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mt-5 p-4">
-          <div className="lg:mb-0">
-            <div className="flex items-center">
-              <img
-                className="w-[250px]"
-                src={"/assets/engineering_logo.webp"}
-                alt="Engineering Assignment Help"
-              />
-            </div>
+        {/* Main Footer Content */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 py-12">
+          {/* Logo and Contact Section */}
+          <div className="lg:col-span-4">
+            <img
+              className="w-[200px] mb-8"
+              src="/assets/engineering_logo.webp"
+              alt="Engineering Assignment Help"
+            />
+            <ContactCard />
           </div>
 
-          <div className="contactInfo">
-            <h3 className="text-xl font-bold mb-4 text-white">Quick Links</h3>
-            <ul className="ml-2 text-xl">
+          {/* Quick Links Section */}
+          <div className="lg:col-span-2">
+            <h3 className="text-xl font-bold text-white mb-6">Quick Links</h3>
+            <ul className="space-y-3">
               <li>
                 <ConditionalScrollLink to="subject">
                   Subject
@@ -156,7 +146,7 @@ const Footer = () => {
               <li>
                 <RouterLink
                   to="/contact"
-                  className="hover:text-yellow-500 cursor-pointer"
+                  className="hover:text-yellow-400 transition-colors duration-300"
                 >
                   Contact Us
                 </RouterLink>
@@ -164,178 +154,136 @@ const Footer = () => {
             </ul>
           </div>
 
-          <div className="contactInfo">
-            <h3 className="text-xl font-bold mb-4 text-white">
+          {/* Assignment Help Section */}
+          <div className="lg:col-span-3">
+            <h3 className="text-xl font-bold text-white mb-6">
               Assignment Help
             </h3>
-            <ul className="ml-2 text-xl">
-              <li>
-                <RouterLink
-                  to="https://www.assignmentwriter.au/assessment-help"
-                  className="hover:text-yellow-500 cursor-pointer"
-                >
-                  Assignment help
-                </RouterLink>
-              </li>
-              <li>
-                <RouterLink
-                  to="https://www.assignmentwriter.au/accounting-assignment-help"
-                  className="hover:text-yellow-500 cursor-pointer"
-                >
-                  Accounting assignment help
-                </RouterLink>
-              </li>
-              <li>
-                <RouterLink
-                  to="https://www.assignmentwriter.au/management-assignment-help"
-                  className="hover:text-yellow-500 cursor-pointer"
-                >
-                  Management assignment help
-                </RouterLink>
-              </li>
-              <li>
-                <RouterLink
-                  to="https://www.assignmentwriter.au/nursing-assignment-help"
-                  className="hover:text-yellow-500 cursor-pointer"
-                >
-                  Nursing assignment help
-                </RouterLink>
-              </li>
-              <li>
-                <RouterLink
-                  to="https://www.assignmentwriter.au/computer-science-assignment-help"
-                  className="hover:text-yellow-500 cursor-pointer"
-                >
-                  Programming assignment help
-                </RouterLink>
-              </li>
-              <li>
-                <RouterLink
-                  to="https://www.assignmentwriter.au/marketing-assignment-help"
-                  className="hover:text-yellow-500 cursor-pointer"
-                >
-                  Marketing assignment help
-                </RouterLink>
-              </li>
-              <li>
-                <RouterLink
-                  to="https://www.assignmentwriter.au/law-assignment-help"
-                  className="hover:text-yellow-500 cursor-pointer"
-                >
-                  Law assignment help
-                </RouterLink>
-              </li>
-              <li>
-                <RouterLink
-                  to="https://www.assignmentwriter.au/engineering-assignment-help"
-                  className="hover:text-yellow-500 cursor-pointer"
-                >
-                  Engineering assignment help
-                </RouterLink>
-              </li>
+            <ul className="space-y-3">
+              {[
+                {
+                  name: "Assignment Help",
+                  url: "https://www.assignmentwriter.au/assessment-help",
+                },
+                {
+                  name: "Accounting Assignment Help",
+                  url: "https://www.assignmentwriter.au/accounting-assignment-help",
+                },
+                {
+                  name: "Management Assignment Help",
+                  url: "https://www.assignmentwriter.au/management-assignment-help",
+                },
+                {
+                  name: "Nursing Assignment Help",
+                  url: "https://www.assignmentwriter.au/nursing-assignment-help",
+                },
+                {
+                  name: "Programming Assignment Help",
+                  url: "https://www.assignmentwriter.au/computer-science-assignment-help",
+                },
+                {
+                  name: "Marketing Assignment Help",
+                  url: "https://www.assignmentwriter.au/marketing-assignment-help",
+                },
+                {
+                  name: "Law Assignment Help",
+                  url: "https://www.assignmentwriter.au/law-assignment-help",
+                },
+                {
+                  name: "Engineering Assignment Help",
+                  url: "https://www.assignmentwriter.au/engineering-assignment-help",
+                },
+              ].map((link) => (
+                <li key={link.name}>
+                  <RouterLink
+                    to={link.url}
+                    className="hover:text-yellow-400 transition-colors duration-300 flex items-center gap-2"
+                  >
+                    <span className="w-1.5 h-1.5 bg-yellow-400 rounded-full"></span>
+                    <span>{link.name}</span>
+                  </RouterLink>
+                </li>
+              ))}
             </ul>
           </div>
 
-          <div className="contactInfo">
-            <h3 className="text-xl font-bold mb-4 text-left text-white">
-              Contact Information
-            </h3>
-            <div className="text-center">
-              <div className="flex gap-4">
-                <span>
-                  <img src={"/assets/call.webp"} alt="Contact me" />
-                </span>
-                <a
-                  className="text-xl max-[320px]:text-[1rem] hover:text-yellow-500"
-                  href="tel:+61489921023"
+          {/* Our Partners Section */}
+          <div className="lg:col-span-3">
+            <h3 className="text-xl font-bold text-white mb-6">Our Partners</h3>
+            <div className="grid grid-cols-1 gap-3">
+              {partnerLinks.map((partner) => (
+                <RouterLink
+                  key={partner.name}
+                  to={partner.url}
+                  className="hover:text-yellow-400 transition-colors duration-300 flex items-center gap-2 text-sm"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
-                  +61489921023
-                </a>
-              </div>
-              <div className="flex gap-4 mt-3">
-                <span className="w-8">
-                  <img
-                    width={30}
-                    height={30}
-                    src={"/assets/email.webp"}
-                    alt="Drop email"
-                  />
-                </span>
-                <a
-                  className="text-lg max-[320px]:text-[1rem] hover:text-yellow-500"
-                  href="mailto:help@engineeringasignhelp.com"
-                >
-                  help@engineeringasignhelp.com
-                </a>
-              </div>
-              <div className="flex gap-4 mt-3">
-                <span className="w-8">
-                  <MapPin size={25} />
-                </span>
-                <span className="text-lg max-[320px]:text-[1rem]">
-                  16 Miami Dr, Point Cook VIC 3030 Australia
-                </span>
-              </div>
-              <button className="mt-4 bg-yellow-500 hover:bg-yellow-600 w-full text-black hover:text-white font-bold py-2 px-4 rounded">
-                <a href="tel:61489921023">Any Query</a>
-              </button>
+                  <span className="w-1.5 h-1.5 bg-yellow-400 rounded-full"></span>
+                  <span>{partner.name}</span>
+                </RouterLink>
+              ))}
             </div>
           </div>
         </div>
 
-        {/* Social Media Icons */}
-        <div className="flex justify-center items-center gap-6 py-6 border-t border-gray-500 mt-8">
-          <a
-            href="https://www.instagram.com/clickinpedia.io"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:opacity-80 transition-opacity duration-300"
-          >
-            <InstagramIcon />
-            <span className="sr-only">Instagram</span>
-          </a>
-          <a
-            href="https://www.linkedin.com/company/clickinpediaio"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:opacity-80 transition-opacity duration-300"
-          >
-            <LinkedInIcon />
-            <span className="sr-only">LinkedIn</span>
-          </a>
-          <a
-            href="https://www.facebook.com/247Asignmenthelp"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:opacity-80 transition-opacity duration-300"
-          >
-            <FacebookIcon />
-            <span className="sr-only">Facebook</span>
-          </a>
-          <a
-            href="https://www.youtube.com/@Clickinpedia._io"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:opacity-80 transition-opacity duration-300"
-          >
-            <YoutubeIcon />
-            <span className="sr-only">YouTube</span>
-          </a>
-        </div>
-
-        <div className="mt-5 pt-2 text-center">
-          <p className="m-0 p-3 text-[1.3rem]">
-            CopyRight &copy; 2024 Engineering Assignment Help. All rights
-            reserved || <br className="hidden max-[480px]:block" />A Brand of{" "}
-            <a
-              className="bg-slate-900 text-yellow-400 pb-2 pt-1 hover:px-6 hover:rounded-full transition delay-1000 ease-linear rounded-lg px-4"
-              target="_blank"
-              rel="noopener noreferrer"
-              href="https://www.assignmentwriter.au/"
-            >
-              Assignment Writer
-            </a>
-          </p>
+        {/* Social Media Section */}
+        <div className="border-t border-slate-700/50 py-8">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-6">
+            <div className="flex items-center gap-4">
+              <SocialIcon href="https://www.instagram.com/clickinpedia.io">
+                <svg
+                  className="w-5 h-5 text-white group-hover:text-slate-900"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                </svg>
+              </SocialIcon>
+              <SocialIcon href="https://www.linkedin.com/company/clickinpediaio">
+                <svg
+                  className="w-5 h-5 text-white group-hover:text-slate-900"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                </svg>
+              </SocialIcon>
+              <SocialIcon href="https://www.facebook.com/247Asignmenthelp">
+                <svg
+                  className="w-5 h-5 text-white group-hover:text-slate-900"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z" />
+                </svg>
+              </SocialIcon>
+              <SocialIcon href="https://www.youtube.com/@Clickinpedia._io">
+                <svg
+                  className="w-5 h-5 text-white group-hover:text-slate-900"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z" />
+                </svg>
+              </SocialIcon>
+            </div>
+            <p className="text-center md:text-left text-sm">
+              Copyright © {new Date().getFullYear()} Engineering Assignment
+              Help. All rights reserved |{" "}
+              <span className="whitespace-nowrap">
+                A Brand of{" "}
+                <a
+                  href="https://www.assignmentwriter.au/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-yellow-500 text-slate-900 px-3 py-1 rounded-full hover:bg-yellow-400 transition-colors duration-300 font-medium"
+                >
+                  Assignment Writer
+                </a>
+              </span>
+            </p>
+          </div>
         </div>
       </div>
     </footer>

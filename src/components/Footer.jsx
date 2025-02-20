@@ -1,4 +1,4 @@
-import { MapPin, Phone, Mail } from "lucide-react";
+import { MapPin, Phone, Mail, ChevronRight } from "lucide-react";
 import { Link as ScrollLink } from "react-scroll";
 import { Link as RouterLink, useLocation } from "react-router-dom";
 
@@ -80,37 +80,31 @@ const ContactCard = () => (
 );
 
 const Footer = () => {
-  const partnerLinks = [
-    { name: "Assignment Expert", url: "https://www.assignmentexpert.io/" },
+  const subjectLinks = [
     {
-      name: "MYOB Assignment Help",
-      url: "https://www.myobassignmenthelp.com/",
+      name: "Assessment help",
+      url: "https://www.assignmentwriter.au/assessment-help",
+    },
+    { name: "Essay help", url: "https://www.assignmentwriter.au/essay-help" },
+    { name: "Thesis help", url: "https://www.assignmentwriter.au/thesis-help" },
+    {
+      name: "Case study help",
+      url: "https://www.assignmentwriter.au/case-study-help",
+    },
+    { name: "Paper help", url: "https://www.assignmentwriter.au/" },
+    {
+      name: "Research proposal",
+      url: "https://www.assignmentwriter.au/research-proposal-help",
     },
     {
-      name: "Xero Assignment Help",
-      url: "https://www.xeroassignmenthelp.com/",
+      name: "Dissertation help",
+      url: "https://www.assignmentwriter.au/dissertation-help",
     },
-    { name: "Online Exam Help", url: "https://www.onlineexamhelp.io/" },
+    { name: "Term paper", url: "https://www.assignmentwriter.au/" },
+    { name: "Report writing help", url: "https://www.assignmentwriter.au/" },
     {
-      name: "Engineering Assignment Help",
-      url: "https://www.engineeringassignmenthelp.com/",
-    },
-    { name: "Coursework Help", url: "https://www.courseworkhelp.io/" },
-    { name: "Assessment Help UK", url: "https://www.assessmenthelp.uk/" },
-    {
-      name: "Programming Assignment Help UK",
-      url: "https://www.programmingassignmenthelp.uk/",
-    },
-    { name: "Coursework Help UK", url: "https://www.courseworkhelp.uk/" },
-    { name: "Exam Help UK", url: "https://www.examhelp.uk/" },
-    {
-      name: "Online TAFE Assignment Help",
-      url: "https://www.onlinetafeassignmenthelp.com/",
-    },
-    { name: "Case Study Help UK", url: "https://www.casestudyhelp.uk/" },
-    {
-      name: "Marketing Assignment Help UK",
-      url: "https://www.marketingassignmenthelp.uk/",
+      name: "Coursework help",
+      url: "https://www.assignmentwriter.au/coursework-help",
     },
   ];
 
@@ -151,6 +145,24 @@ const Footer = () => {
                   Contact Us
                 </RouterLink>
               </li>
+            </ul>
+          </div>
+
+          {/* Subjects Section */}
+          <div className="lg:col-span-3">
+            <h3 className="text-xl font-bold text-white mb-6">Subjects</h3>
+            <ul className="space-y-3">
+              {subjectLinks.map((link) => (
+                <li key={link.name}>
+                  <RouterLink
+                    to={link.url}
+                    className="hover:text-yellow-400 transition-colors duration-300 flex items-center gap-2"
+                  >
+                    <ChevronRight className="w-4 h-4 text-yellow-400" />
+                    <span>{link.name}</span>
+                  </RouterLink>
+                </li>
+              ))}
             </ul>
           </div>
 
@@ -199,31 +211,12 @@ const Footer = () => {
                     to={link.url}
                     className="hover:text-yellow-400 transition-colors duration-300 flex items-center gap-2"
                   >
-                    <span className="w-1.5 h-1.5 bg-yellow-400 rounded-full"></span>
+                    <ChevronRight className="w-4 h-4 text-yellow-400" />
                     <span>{link.name}</span>
                   </RouterLink>
                 </li>
               ))}
             </ul>
-          </div>
-
-          {/* Our Partners Section */}
-          <div className="lg:col-span-3">
-            <h3 className="text-xl font-bold text-white mb-6">Our Partners</h3>
-            <div className="grid grid-cols-1 gap-3">
-              {partnerLinks.map((partner) => (
-                <RouterLink
-                  key={partner.name}
-                  to={partner.url}
-                  className="hover:text-yellow-400 transition-colors duration-300 flex items-center gap-2 text-sm"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <span className="w-1.5 h-1.5 bg-yellow-400 rounded-full"></span>
-                  <span>{partner.name}</span>
-                </RouterLink>
-              ))}
-            </div>
           </div>
         </div>
 

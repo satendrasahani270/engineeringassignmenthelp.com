@@ -10,6 +10,10 @@ import SerSub from "./components/SerSub";
 import { useState } from "react";
 import { Helmet } from "react-helmet";
 function App() {
+  console.log = () => {};
+  console.error = () => {};
+  console.info = () => {};
+  console.warn = () => {};
   const [activeComponent, setActiveComponent] = useState("subject");
   return (
     <>

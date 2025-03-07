@@ -153,11 +153,14 @@
     <script async>
       (function (w, d) {
         w.CollectId = "665d63771063215eaa123088";
-        var h = d.head || d.getElementsByTagName("head")[0];
-        var s = d.createElement("script");
-        s.async = true;
-        s.src = "https://collectcdn.com/launcher.js";
-        h.appendChild(s);
+
+        setTimeout(() => {
+          var h = d.head || d.getElementsByTagName("head")[0];
+          var s = d.createElement("script");
+          s.async = true;
+          s.src = "https://collectcdn.com/launcher.js";
+          h.appendChild(s);
+        }, 5000); // Loads chatbot script after 5 seconds
       })(window, document);
     </script>
   </body>

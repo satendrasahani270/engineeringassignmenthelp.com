@@ -9,6 +9,7 @@ import OurServices from "./OurServices";
 import SerSub from "./components/SerSub";
 import { useState } from "react";
 import { Helmet } from "react-helmet";
+import OurCustomChat from "./components/OurCustomChat";
 function App() {
   console.log = () => {};
   console.error = () => {};
@@ -37,7 +38,7 @@ function App() {
       <OurServices />
       <FAQ />
       <Footer />
-      {/* <WhatsApp /> */}
+      <OurCustomChat />
     </>
   );
 }

@@ -12,7 +12,7 @@ const OurCustomChat = () => {
     }
 
     const handleMessage = (event) => {
-      if (event.origin === "https://portal.clickinpedia.io") {
+      if (event.origin === "https://portal.clickinpedia.io/new-chat") {
         if (chatWidgetRef.current) {
           if (event.data.action === "hideChat") {
             setChatWidgetVisible(false);
@@ -36,15 +36,16 @@ const OurCustomChat = () => {
     const referralUrl = encodeURIComponent(document.referrer);
     const currentPage = encodeURIComponent(window.location.href);
     const origin = encodeURIComponent(window.location.origin);
-    const api = `https://portal.clickinpedia.io/chat?website=${origin}&currentPage=${currentPage}&redirect=${referralUrl}`;
+    const api = `https://portal.clickinpedia.io/new-chat?website=${origin}&currentPage=${currentPage}&redirect=${referralUrl}&theme=engineeringassignmenthelp-com&countryCode=61&phoneNumber=489921023&whatsappNo=489921023&email=help@engineeringasignhelp.com`;
 
     const chatWidget = document.createElement("iframe");
     chatWidget.src = api;
     chatWidget.id = "chat-widget-iframe";
     chatWidget.style.position = "fixed";
     chatWidget.style.bottom = "20px";
-    chatWidget.style.width = "370px";
-    chatWidget.style.height = "90%";
+    chatWidget.style.right = "20px";
+    chatWidget.style.width = "420px";
+    chatWidget.style.height = "81%";
     chatWidget.style.border = "none";
     chatWidget.style.zIndex = "9999999";
     chatWidget.style.background = "transparent";
@@ -68,13 +69,13 @@ const OurCustomChat = () => {
   useEffect(() => {
     if (chatWidgetRef.current) {
       if (chatWidgetVisible) {
-        chatWidgetRef.current.style.width = "370px";
-        chatWidgetRef.current.style.height = "90%";
+        chatWidgetRef.current.style.width = "420px";
+        chatWidgetRef.current.style.height = "81%";
         chatWidgetRef.current.style.bottom = "20px";
         chatWidgetRef.current.style.borderRadius = "0px";
       } else {
-        chatWidgetRef.current.style.width = "91px";
-        chatWidgetRef.current.style.height = "74px";
+        chatWidgetRef.current.style.width = "240px";
+        chatWidgetRef.current.style.height = "233px";
         chatWidgetRef.current.style.bottom = "10px";
         chatWidgetRef.current.style.borderRadius = "34px";
       }

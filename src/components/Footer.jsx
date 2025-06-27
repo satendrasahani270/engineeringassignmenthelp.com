@@ -83,28 +83,31 @@ const Footer = () => {
   const subjectLinks = [
     {
       name: "Assessment help",
-      url: "https://www.assignmentwriter.au/assessment-help",
+      url: "https://www.assignmentwriters.au/assessment-help",
     },
-    { name: "Essay help", url: "https://www.assignmentwriter.au/essay-help" },
-    { name: "Thesis help", url: "https://www.assignmentwriter.au/thesis-help" },
+    { name: "Essay help", url: "https://www.assignmentwriters.au/essay-help" },
+    {
+      name: "Thesis help",
+      url: "https://www.assignmentwriters.au/thesis-help",
+    },
     {
       name: "Case study help",
-      url: "https://www.assignmentwriter.au/case-study-help",
+      url: "https://www.assignmentwriters.au/case-study-help",
     },
-    { name: "Paper help", url: "https://www.assignmentwriter.au/" },
+    { name: "Paper help", url: "https://www.assignmentwriters.au/" },
     {
       name: "Research proposal",
-      url: "https://www.assignmentwriter.au/research-proposal-help",
+      url: "https://www.assignmentwriters.au/research-proposal-help",
     },
     {
       name: "Dissertation help",
-      url: "https://www.assignmentwriter.au/dissertation-help",
+      url: "https://www.assignmentwriters.au/dissertation-help",
     },
-    { name: "Term paper", url: "https://www.assignmentwriter.au/" },
-    { name: "Report writing help", url: "https://www.assignmentwriter.au/" },
+    { name: "Term paper", url: "https://www.assignmentwriters.au/" },
+    { name: "Report writing help", url: "https://www.assignmentwriters.au/" },
     {
       name: "Coursework help",
-      url: "https://www.assignmentwriter.au/coursework-help",
+      url: "https://www.assignmentwriters.au/coursework-help",
     },
   ];
 
@@ -175,35 +178,35 @@ const Footer = () => {
               {[
                 {
                   name: "Assignment Help",
-                  url: "https://www.assignmentwriter.au/assessment-help",
+                  url: "https://www.assignmentwriters.au/assessment-help",
                 },
                 {
                   name: "Accounting Assignment Help",
-                  url: "https://www.assignmentwriter.au/accounting-assignment-help",
+                  url: "https://www.assignmentwriters.au/accounting-assignment-help",
                 },
                 {
                   name: "Management Assignment Help",
-                  url: "https://www.assignmentwriter.au/management-assignment-help",
+                  url: "https://www.assignmentwriters.au/management-assignment-help",
                 },
                 {
                   name: "Nursing Assignment Help",
-                  url: "https://www.assignmentwriter.au/nursing-assignment-help",
+                  url: "https://www.assignmentwriters.au/nursing-assignment-help",
                 },
                 {
                   name: "Programming Assignment Help",
-                  url: "https://www.assignmentwriter.au/computer-science-assignment-help",
+                  url: "https://www.assignmentwriters.au/computer-science-assignment-help",
                 },
                 {
                   name: "Marketing Assignment Help",
-                  url: "https://www.assignmentwriter.au/marketing-assignment-help",
+                  url: "https://www.assignmentwriters.au/marketing-assignment-help",
                 },
                 {
                   name: "Law Assignment Help",
-                  url: "https://www.assignmentwriter.au/law-assignment-help",
+                  url: "https://www.assignmentwriters.au/law-assignment-help",
                 },
                 {
                   name: "Engineering Assignment Help",
-                  url: "https://www.assignmentwriter.au/engineering-assignment-help",
+                  url: "https://www.assignmentwriters.au/engineering-assignment-help",
                 },
               ].map((link) => (
                 <li key={link.name}>
@@ -267,7 +270,7 @@ const Footer = () => {
               <span className="whitespace-nowrap">
                 A Brand of{" "}
                 <a
-                  href="https://www.assignmentwriter.au/"
+                  href="https://www.assignmentwriters.au/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="bg-yellow-500 text-slate-900 px-3 py-1 rounded-full hover:bg-yellow-400 transition-colors duration-300 font-medium"

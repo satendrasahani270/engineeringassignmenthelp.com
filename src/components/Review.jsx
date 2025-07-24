@@ -3,6 +3,8 @@
 import React, { useState } from "react";
 import Slider from "react-slick";
 import { Star } from "lucide-react";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const reviewData = [
   {
@@ -59,11 +61,11 @@ const reviewData = [
 
 const StarRating = ({ rating }) => {
   return (
-    <div className="flex">
+    <div className="flex items-center gap-1">
       {[...Array(5)].map((_, index) => (
         <Star
           key={index}
-          className={`w-5 h-5 ${
+          className={`w-4 h-4 ${
             index < rating ? "text-yellow-400 fill-current" : "text-gray-300"
           }`}
         />
@@ -76,32 +78,59 @@ const ReviewCard = ({ review }) => {
   const [isExpanded, setIsExpanded] = useState(false);
 
   return (
-    <div className="bg-white p-6 rounded-lg shadow-xl flex flex-col justify-between h-full">
-      <div>
-        <div className="flex items-center mb-4">
-          <div className="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold text-xl mr-4">
-            {review.name[0]}
+    <div className="bg-white border border-gray-100 rounded-2xl p-8 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 flex flex-col justify-between h-full group">
+      <div className="space-y-6">
+        {/* Header with avatar and user info */}
+        <div className="flex items-start gap-4">
+          <div className="flex-shrink-0">
+            <div className="w-14 h-14 bg-blue-500 rounded-full flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow duration-300">
+              <span className="text-white font-bold text-lg">
+                {review.name[0].toUpperCase()}
+              </span>
+            </div>
           </div>
-          <div>
-            <h5 className="font-semibold text-xl">{review.name}</h5>
+          <div className="flex-1 min-w-0">
+            <h3 className="font-bold text-lg text-gray-900 mb-2">
+              {review.name}
+            </h3>
             <StarRating rating={review.rating} />
           </div>
         </div>
-        <p
-          className={`text-gray-600  text-[1.3rem] ${
-            isExpanded ? "" : "line-clamp-4"
-          }`}
-        >
-          {review.text}
-        </p>
+
+        {/* Review content */}
+        <div className="relative">
+          <p
+            className={`text-gray-600 leading-relaxed text-base ${
+              isExpanded ? "" : "line-clamp-4"
+            }`}
+          >
+            {review.text}
+          </p>
+
+          {/* Fade effect for collapsed text */}
+          {!isExpanded && review.text.length > 200 && (
+            <div className="absolute bottom-0 left-0 right-0 h-6 bg-gradient-to-t from-white to-transparent pointer-events-none" />
+          )}
+        </div>
       </div>
+
+      {/* Read more button */}
       {review.text.length > 200 && (
-        <button
-          className="text-blue-500 hover:text-blue-700 font-semibold mt-2"
-          onClick={() => setIsExpanded(!isExpanded)}
-        >
-          {isExpanded ? "Read Less" : "Read More"}
-        </button>
+        <div className="pt-4 border-t border-gray-50 mt-6">
+          <button
+            className="text-blue-500 hover:text-blue-700 font-semibold text-sm transition-colors duration-200 flex items-center gap-1"
+            onClick={() => setIsExpanded(!isExpanded)}
+          >
+            {isExpanded ? "Read Less" : "Read More"}
+            <span
+              className={`transform transition-transform duration-200 ${
+                isExpanded ? "rotate-180" : ""
+              }`}
+            >
+              ↓
+            </span>
+          </button>
+        </div>
       )}
     </div>
   );
@@ -118,12 +147,15 @@ const Review = () => {
     autoplaySpeed: 5000,
     pauseOnHover: true,
     rows: 2,
+    centerMode: false,
+    variableWidth: false,
     responsive: [
       {
         breakpoint: 1024,
         settings: {
           slidesToShow: 2,
           slidesToScroll: 1,
+          centerMode: false,
         },
       },
       {
@@ -132,33 +164,96 @@ const Review = () => {
           slidesToShow: 1,
           slidesToScroll: 1,
           rows: 1,
+          centerMode: false,
         },
       },
     ],
   };
 
   return (
-    <section id="testimonials" className="bg-gray-50 py-16">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-10 text-gray-800">
-          Engineering Assignment Help Services Are Trusted By Clients From
-          Various Parts of the World
-        </h2>
-        <Slider {...settings} className="review-slider">
-          {reviewData.map((review, index) => (
-            <div key={index} className="px-2 py-4">
-              <ReviewCard review={review} />
-            </div>
-          ))}
-        </Slider>
+    <section id="testimonials" className="bg-gray-50 py-20">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+        {/* Header */}
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4 leading-tight">
+            Engineering Assignment Help Services Are Trusted By Clients From{" "}
+            <span className="text-blue-600">Various Parts of the World</span>
+          </h2>
+          <div className="w-24 h-1 bg-blue-500 mx-auto rounded-full"></div>
+        </div>
+
+        {/* Reviews slider */}
+        <div className="relative overflow-hidden">
+          <div className="review-slider-container">
+            <Slider {...settings} className="review-slider">
+              {reviewData.map((review, index) => (
+                <div key={index} className="px-3 py-4">
+                  <ReviewCard review={review} />
+                </div>
+              ))}
+            </Slider>
+          </div>
+        </div>
       </div>
-      <style jsx global>{`
-        .review-slider .slick-dots li button:before {
-          font-size: 12px;
-          color: #3b82f6;
+
+      {/* Custom slider styles */}
+      <style>{`
+        .review-slider-container {
+          overflow: hidden;
+          margin: 0 -12px;
         }
+        
+        .review-slider {
+          overflow: visible;
+        }
+        
+        .review-slider .slick-track {
+          display: flex;
+          align-items: stretch;
+        }
+        
+        .review-slider .slick-slide {
+          height: auto;
+        }
+        
+        .review-slider .slick-slide > div {
+          height: 100%;
+        }
+        
+        .review-slider .slick-dots {
+          bottom: -60px;
+        }
+        
+        .review-slider .slick-dots li {
+          margin: 0 8px;
+        }
+        
+        .review-slider .slick-dots li button:before {
+          font-size: 14px;
+          color: #3b82f6;
+          opacity: 0.5;
+          transition: all 0.3s ease;
+        }
+        
         .review-slider .slick-dots li.slick-active button:before {
           color: #2563eb;
+          opacity: 1;
+          transform: scale(1.2);
+        }
+        
+        .review-slider .slick-dots li:hover button:before {
+          opacity: 0.8;
+          transform: scale(1.1);
+        }
+        
+        .review-slider .slick-list {
+          overflow: hidden;
+          padding: 0 12px;
+        }
+        
+        /* Hide any overflow that might cause partial cards to show */
+        .review-slider .slick-track {
+          margin-left: 0;
         }
       `}</style>
     </section>
